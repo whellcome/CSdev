@@ -1,4 +1,7 @@
-﻿using System;
+﻿using StDietmar.InsulinCalculator.DbStructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StDietmar.InsulinCalculator
 {
@@ -7,6 +10,43 @@ namespace StDietmar.InsulinCalculator
     {
         static void Main(string[] args)
         {
+
+            using (var context = new ICDbContext())
+            {
+                if (!context.Products.Any(x => x.Id == 1)) //Initiate, when not exist
+                {
+                    var prod = new Product()
+                    {
+                        Name = "Apple",
+                        Art = "Green",
+                        Carbohydrates = 90,
+                        GlycemicIndex = 35,
+                        DefaultAmount = 100
+                    };
+
+
+                    var dish = new Dish()
+                    {
+                        Name = "Half an apple ",
+                        DefaultAmount = 50,
+                        RoastProcent = 100
+                    };
+
+                    context.Products.Add(prod);
+                    context.Dishes.Add(dish);
+                    context.SaveChanges();
+
+
+                    var ingredients = new List<Ingredient>()
+                    {
+                        new Ingredient() { ProductId = prod.Id, DishId = dish.Id, Amount = 50 },
+                        new Ingredient() { ProductId = prod.Id, DishId = dish.Id, Amount = 50}
+                    };
+                    context.Ingredients.AddRange(ingredients);
+                    context.SaveChanges();
+                }
+
+            }
 
             Calculator insulinPlan = new Calculator();
             insulinPlan.FactorPlan[(int)DP.Night_0_3] = 0.5;

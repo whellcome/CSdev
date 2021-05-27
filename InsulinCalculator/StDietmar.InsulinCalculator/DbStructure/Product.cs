@@ -11,5 +11,6 @@ namespace StDietmar.InsulinCalculator.DbStructure
         public int Carbohydrates { get; set; }
         public int GlycemicIndex { get; set; }
         public double DefaultAmount { get; set; }
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
     }
 }
