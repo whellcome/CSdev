@@ -1,0 +1,6 @@
+D:\0\projects\VSC\UDPTCP\TCPServer\bin\Debug\TCPServer.exe.config
+D:\0\projects\VSC\UDPTCP\TCPServer\bin\Debug\TCPServer.exe
+D:\0\projects\VSC\UDPTCP\TCPServer\bin\Debug\TCPServer.pdb
+D:\0\projects\VSC\UDPTCP\TCPServer\obj\Debug\TCPServer.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\UDPTCP\TCPServer\obj\Debug\TCPServer.exe
+D:\0\projects\VSC\UDPTCP\TCPServer\obj\Debug\TCPServer.pdb
