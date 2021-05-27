@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Json.Net;
+using System;
 using System.Collections.Generic;
+
 
 namespace StDietmar.InsulinCalculator
 {
@@ -68,6 +70,11 @@ namespace StDietmar.InsulinCalculator
                 
             }
             return ingredient;
+        }
+        public void SerializeWithJSONNet() //TODO: implement to exchange with the database
+        {
+            //Ingredients ingredient1 = new Ingredients(new Products("Apple"), 100);
+            //var ing = JsonNet.Serialize(ingredient1);
         }
 
     }

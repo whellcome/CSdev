@@ -45,7 +45,7 @@ namespace StDietmar.InsulinCalculator
                 return $"{FirstName.Substring(0, 1)}. {SecondName}";
             }
         }
-        public string TabelName
+        public string TableName
         {
             get
             {

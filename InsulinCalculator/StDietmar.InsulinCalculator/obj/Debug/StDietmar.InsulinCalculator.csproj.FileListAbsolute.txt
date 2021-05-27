@@ -1,0 +1,8 @@
+D:\0\projects\VSC\test2\StDietmar.Test2\obj\Debug\StDietmar.InsulinCalculator.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\test2\StDietmar.Test2\obj\Debug\StDietmar.Test2.exe
+D:\0\projects\VSC\test2\StDietmar.Test2\obj\Debug\StDietmar.Test2.pdb
+D:\0\projects\VSC\test2\StDietmar.Test2\bin\Debug\StDietmar.Test2.exe.config
+D:\0\projects\VSC\test2\StDietmar.Test2\bin\Debug\StDietmar.Test2.exe
+D:\0\projects\VSC\test2\StDietmar.Test2\bin\Debug\StDietmar.Test2.pdb
+D:\0\projects\VSC\CSdev\InsulinCalculator\StDietmar.InsulinCalculator\obj\Debug\StDietmar.InsulinCalculator.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\InsulinCalculator\StDietmar.InsulinCalculator\obj\Debug\StDietmar.InsulinCalculator.csproj.CoreCompileInputs.cache
