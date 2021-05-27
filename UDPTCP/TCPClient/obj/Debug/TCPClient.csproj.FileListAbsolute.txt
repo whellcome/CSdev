@@ -1,0 +1,7 @@
+D:\0\projects\VSC\UDPTCP\TCPClient\bin\Debug\TCPClient.exe.config
+D:\0\projects\VSC\UDPTCP\TCPClient\bin\Debug\TCPClient.exe
+D:\0\projects\VSC\UDPTCP\TCPClient\bin\Debug\TCPClient.pdb
+D:\0\projects\VSC\UDPTCP\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\UDPTCP\TCPClient\obj\Debug\TCPClient.exe
+D:\0\projects\VSC\UDPTCP\TCPClient\obj\Debug\TCPClient.pdb
+D:\0\projects\VSC\UDPTCP\TCPClient\obj\Debug\TCPClient.csproj.AssemblyReference.cache
