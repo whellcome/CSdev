@@ -32,7 +32,7 @@ namespace TCPClient
                     var message = Console.ReadLine();
                     var data = Encoding.UTF8.GetBytes(message);
                     tcpSocket.Send(data);
-                    //System.Threading.Thread.Sleep(500);
+                    
                     if (message.Equals("exit")) break;
                 }
                 catch (Exception ex)
