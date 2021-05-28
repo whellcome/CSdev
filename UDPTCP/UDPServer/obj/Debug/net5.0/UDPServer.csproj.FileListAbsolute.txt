@@ -1,0 +1,16 @@
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.exe
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.deps.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.runtimeconfig.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.runtimeconfig.dev.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\ref\UDPServer.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\bin\Debug\net5.0\UDPServer.pdb
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.AssemblyInfoInputs.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.AssemblyInfo.cs
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\ref\UDPServer.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.pdb
+D:\0\projects\VSC\CSdev\UDPTCP\UDPServer\obj\Debug\net5.0\UDPServer.genruntimeconfig.cache

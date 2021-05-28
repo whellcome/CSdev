@@ -1,0 +1,16 @@
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.exe
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.deps.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.runtimeconfig.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.runtimeconfig.dev.json
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\ref\UDPClient.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\bin\Debug\net5.0\UDPClient.pdb
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.AssemblyInfoInputs.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.AssemblyInfo.cs
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\ref\UDPClient.dll
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.pdb
+D:\0\projects\VSC\CSdev\UDPTCP\UDPClient\obj\Debug\net5.0\UDPClient.genruntimeconfig.cache
