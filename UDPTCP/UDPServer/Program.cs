@@ -25,12 +25,11 @@ namespace UDPServer
                     data.Append(Encoding.UTF8.GetString(buffer));
                 }
                 while (udpSocket.Available > 0);
-
-                Console.WriteLine(data);
-                udpSocket.SendTo(Encoding.UTF8.GetBytes("Success"), senderEndPoint);
-                
+                if (data.Length == 0) continue;
                 if (data.ToString().Equals("exit", StringComparison.InvariantCultureIgnoreCase))
                     break;
+                Console.WriteLine(data);
+                udpSocket.SendTo(Encoding.UTF8.GetBytes("Success"), senderEndPoint);
             }
         }
     }

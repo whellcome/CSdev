@@ -31,7 +31,7 @@ namespace UDPClient
                     data.Append(Encoding.UTF8.GetString(buffer));
                 }
                 while (udpSocket.Available > 0);
-
+                if (data.Length == 0) continue;
                 Console.WriteLine(data);
             }
         }
