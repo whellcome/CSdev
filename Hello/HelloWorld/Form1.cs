@@ -44,9 +44,10 @@ namespace HelloWorld
             char[] hiChar = hi.ToCharArray();
             foreach (char ch in hiChar)
             {
-                label.Text += ch;
+                label.Text += ch+"_";
                 form.Refresh();
                 System.Threading.Thread.Sleep(150);
+                label.Text = label.Text.Remove(label.Text.Length - 1);
             }
             for (int i = 0; i < 4; i++)
             {

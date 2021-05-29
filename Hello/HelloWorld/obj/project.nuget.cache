@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fjw0eC/tlUvZC0rVuNbOoFHGSwJRhXEtUb3JsFXGGM2tWiyMzYZn55ZI1zkdR1+AeX23kFtklna/t/jG9dM7nA==",
+  "dgSpecHash": "Ibe7zeHIa0N832CO/IdQKckj7mFJVkDKsCvXxuDC7WCYfgxXeuKlF3wBWarUtOR3X2I+3VDeQPA/7cv+FqKljw==",
   "success": true,
-  "projectFilePath": "D:\\0\\projects\\VSC\\Hello\\HelloWorld\\HelloWorld.csproj",
+  "projectFilePath": "D:\\0\\projects\\VSC\\CSdev\\Hello\\HelloWorld\\HelloWorld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
