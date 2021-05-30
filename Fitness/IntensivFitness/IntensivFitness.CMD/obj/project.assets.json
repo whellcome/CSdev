@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\IntensivFitness.CMD.csproj",
+      "projectUniqueName": "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\IntensivFitness.CMD.csproj",
       "projectName": "IntensivFitness.CMD",
-      "projectPath": "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\IntensivFitness.CMD.csproj",
+      "projectPath": "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\IntensivFitness.CMD.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\obj\\",
+      "outputPath": "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.CMD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj": {
-              "projectPath": "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj"
+            "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj": {
+              "projectPath": "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj"
             }
           }
         }

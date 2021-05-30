@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mJrTfJCSnOqhWYRUtIwBmKtAglJfCWbqPftRyecnMcuDlzF2veZkE2oc4KPGyZN7WuDh+LaMNkrhVQ3vksBwgg==",
+  "dgSpecHash": "oEcHbffcFIQYRMJNesYu4a7uG2FgBsFlxCkmc//LdlfdmX7+4TnlkDAkS5+JjOmkU6rbuC9b3NocZryLboavyg==",
   "success": true,
-  "projectFilePath": "D:\\0\\projects\\VSC\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj",
+  "projectFilePath": "D:\\0\\projects\\VSC\\CSdev\\Fitness\\IntensivFitness\\IntensivFitness.BL\\IntensivFitness.BL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

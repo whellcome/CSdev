@@ -2,6 +2,7 @@
 
 namespace IntensivFitness.BL.Model
 {
+    [Serializable]
     /// <summary>
     /// Gender of user
     /// </summary>

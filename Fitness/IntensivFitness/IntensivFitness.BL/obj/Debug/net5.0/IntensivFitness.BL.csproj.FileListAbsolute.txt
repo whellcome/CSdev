@@ -1,0 +1,12 @@
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\bin\Debug\net5.0\IntensivFitness.BL.deps.json
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\bin\Debug\net5.0\IntensivFitness.BL.dll
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\bin\Debug\net5.0\ref\IntensivFitness.BL.dll
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\bin\Debug\net5.0\IntensivFitness.BL.pdb
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.AssemblyInfoInputs.cache
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.AssemblyInfo.cs
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.csproj.CoreCompileInputs.cache
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.dll
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\ref\IntensivFitness.BL.dll
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.BL\obj\Debug\net5.0\IntensivFitness.BL.pdb
