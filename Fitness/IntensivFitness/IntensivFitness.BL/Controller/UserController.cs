@@ -26,31 +26,58 @@ namespace IntensivFitness.BL.Controller
         /// <summary>
         /// Create new user controller.
         /// </summary>
-        public UserController()
+        /// <param name="userName">param for UserControllerTests</param>
+        public UserController(string userName = "NoName")
         {
-            var userName = InputString("Enter username: ");
-            Users = GetUsersData();
-            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
-
-            if (CurrentUser == null)
+            //Normal call
+            if (userName.Equals("NoName", StringComparison.InvariantCulture))
             {
-                var genderName = InputString("Enter gender: ");
-                var birthday = InputValue<DateTime>("Enter birthday (dd.mm.yyyy): ");
-                var weight = InputValue<double>("Enter weight: ");
-                var height = InputValue<double>("Enter height: ");
-                var gender = new Gender(genderName);
-                var newUser = new User(userName, gender, birthday, weight, height);
-                
-                CurrentUser = newUser;
-                Save();
-            }
-        }
+                userName = InputString("Enter username: ");
+                Users = GetUsersData();
+                CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
 
+                if (CurrentUser == null)
+                {
+                    var genderName = InputString("Enter gender: ");
+                    var birthday = InputValue<DateTime>("Enter birthday (dd.mm.yyyy): ");
+                    var weight = InputValue<double>("Enter weight: ");
+                    var height = InputValue<double>("Enter height: ");
+                    var gender = new Gender(genderName);
+                    var newUser = new User(userName, gender, birthday, weight, height);
+
+                    CurrentUser = newUser;
+                    Users.Add(newUser);
+                    Save();
+                }
+            }
+            //Test call
+            else
+            {
+                Users = GetUsersData();
+                CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
+
+                if (CurrentUser == null)
+                {
+                    var genderName = "mwn";
+                    var birthday = DateTime.Now.AddYears(-20);
+                    var weight = 75;
+                    var height = 175;
+                    var gender = new Gender(genderName);
+                    var newUser = new User(userName, gender, birthday, weight, height);
+
+                    CurrentUser = newUser;
+                    Users.Add(newUser);
+                    Save();
+                }
+            }
+
+        }
+        
         /// <summary>
         /// Loads list of users or returns empty list
         /// </summary>
         /// <returns>list of users</returns>
-        private List<User> GetUsersData()
+        private static List<User> GetUsersData()
         {
             return Load<User>() ?? new List<User>();
         }
@@ -59,7 +86,7 @@ namespace IntensivFitness.BL.Controller
         /// </summary>
         /// <typeparam name="T">Type of list.</typeparam>
         /// <returns>Output list</returns>
-        public List<T> Load<T>() where T : class
+        public static List<T> Load<T>() where T : class
         {
             var formatter = new BinaryFormatter();
             var fileName = typeof(T).Name;
@@ -90,7 +117,7 @@ namespace IntensivFitness.BL.Controller
         /// </summary>
         /// <typeparam name="T">Type of list</typeparam>
         /// <param name="item">item</param>
-        public void Save<T>(List<T> item) where T : class
+        public static void Save<T>(List<T> item) where T : class
         {
             var formatter = new BinaryFormatter();
             var fileName = typeof(T).Name;
