@@ -1,12 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using IntensivFitness.BL.Controller;
 using System;
 using IntensivFitness.BL.Model;
 
 namespace IntensivFitness.BL.Controller.Tests
 {
     [TestClass()]
-    public class UserControllerTests
+    public class UserControllerTests : BaseController
     {
         [TestMethod()]
         public void LoadTest()
@@ -14,7 +13,7 @@ namespace IntensivFitness.BL.Controller.Tests
             //Arrange
             
             //Act
-            var users = UserController.Load<User>();
+            var users = Load<User>();
             //Assert
             Assert.IsNotNull(users);
         }

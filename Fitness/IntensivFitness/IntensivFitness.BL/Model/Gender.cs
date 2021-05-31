@@ -20,7 +20,7 @@ namespace IntensivFitness.BL.Model
         public Gender(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentNullException("Empty value", nameof(name));
+                throw new ArgumentNullException(nameof(name), "Empty value");
             Name = name;
         }
 
