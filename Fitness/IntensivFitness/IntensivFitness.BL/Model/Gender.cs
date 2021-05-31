@@ -12,6 +12,7 @@ namespace IntensivFitness.BL.Model
         /// Gender name
         /// </summary>
         public string Name { get; }
+
         /// <summary>
         /// Create new Gender
         /// </summary>

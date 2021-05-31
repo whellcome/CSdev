@@ -13,23 +13,35 @@ namespace IntensivFitness.BL.Model
         /// Name of user.
         /// </summary>
         public string Name { get; }
+
         /// <summary>
         /// Gender of user.
         /// </summary>
         public Gender Gender { get; }
+
         /// <summary>
         /// Birthdate of user.
         /// </summary>
         public DateTime Birthday { get; }
+
         /// <summary>
         /// Weight of user.
         /// </summary>
         public double Weight { get; set; }
+
         /// <summary>
         /// Height of user.
         /// </summary>
         public double Height { get; set; }
         #endregion
+
+        public int Age { get {
+                DateTime nowDate = DateTime.Today;
+                int age = nowDate.Year - Birthday.Year;
+                if (Birthday > nowDate.AddYears(-age)) age--;
+                return age;
+            } }
+
         /// <summary>
         /// Create new user.
         /// </summary>
@@ -59,7 +71,7 @@ namespace IntensivFitness.BL.Model
 
         public override string ToString()
         {
-            return $"User: {Name} birthday: {Birthday}";
+            return $"User: {Name} age: {Age}";
         }
     }
 }
