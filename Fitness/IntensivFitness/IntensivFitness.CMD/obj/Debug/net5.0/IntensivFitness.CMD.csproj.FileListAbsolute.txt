@@ -17,3 +17,8 @@ D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\ne
 D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\ref\IntensivFitness.CMD.dll
 D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\IntensivFitness.CMD.pdb
 D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\IntensivFitness.CMD.genruntimeconfig.cache
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\bin\Debug\net5.0\de-de\IntensivFitness.CMD.resources.dll
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\IntensivFitness.CMD.Localisations.Local.resources
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\IntensivFitness.CMD.Localisations.Local.de-de.resources
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\IntensivFitness.CMD.csproj.GenerateResource.cache
+D:\0\projects\VSC\CSdev\Fitness\IntensivFitness\IntensivFitness.CMD\obj\Debug\net5.0\de-de\IntensivFitness.CMD.resources.dll
