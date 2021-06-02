@@ -4,7 +4,6 @@ namespace NutritionCalculator.Models
 {
     public class InsulinPlanItem
     {
-        private User user { get; }
         public string Name { get; set; }
         public LocalTime LocalTimeBegin { get; set; }
         public LocalTime LocalTimeEnd { get; set; }
