@@ -20,5 +20,11 @@ namespace NutritionCalculator.Forms
             
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsersListForm usersListForm = new UsersListForm();
+            usersListForm.Show();
+        }
     }
 }

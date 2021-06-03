@@ -11,10 +11,11 @@ namespace NutritionCalculator.Controllers
         {
             var fileName = typeof(T).Name + ".json";
             var items = new List<T>();
-            using (StreamReader sr = new StreamReader(fileName))
+            if (File.Exists(fileName))
             {
-                if (File.Exists(fileName))
+                using (StreamReader sr = new StreamReader(fileName))
                 {
+                
                     string item;
                     while ((item = sr.ReadLine()) != null)
                     {
