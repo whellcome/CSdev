@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NutritionCalculator.Controllers
 {
-    class UserController
+    public class UserController : DataController
     {
 
         /// <summary>
@@ -22,9 +22,14 @@ namespace NutritionCalculator.Controllers
             Users = GetUsersData();
         }
 
-        private List<User> GetUsersData()
+        public List<User> GetUsersData()
         {
-            throw new NotImplementedException();
+            return Load<User>();
+        }
+
+        public void Save()
+        {
+            Save(Users);
         }
     }
 }

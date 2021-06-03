@@ -3,7 +3,7 @@ using System;
 
 namespace NutritionCalculator.Models
 {
-    internal class User
+    public class User
     {
         #region Properties
         public string Name { get; set; }

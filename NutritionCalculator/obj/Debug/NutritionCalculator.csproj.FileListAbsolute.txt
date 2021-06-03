@@ -1,0 +1,5 @@
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.MainForm.resources
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Properties.Resources.resources
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.GenerateResource.cache
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.CoreCompileInputs.cache
