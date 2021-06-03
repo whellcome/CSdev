@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NutritionCalculator.Forms
 {
-    public partial class Form1 : Form
+    public partial class UserForm : Form
     {
-        public Form1()
+        public UserForm()
         {
             InitializeComponent();
         }
