@@ -26,5 +26,24 @@ namespace NutritionCalculator.Forms
             UsersListForm usersListForm = new UsersListForm();
             usersListForm.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            if (NutritionCalculatorData.CurrentUser != null)
+            {
+                buttonSelectUser.Text = $"User: {NutritionCalculatorData.CurrentUser.Name} " +
+                                        $"Change user";
+            }
+            else
+            {
+                buttonSelectUser.Text = "Select a user";
+            }
+            this.Refresh();
+        }
     }
 }

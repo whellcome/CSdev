@@ -51,7 +51,7 @@ namespace NutritionCalculator.Forms
             this.usersListView.TabIndex = 0;
             this.usersListView.UseCompatibleStateImageBehavior = false;
             this.usersListView.View = System.Windows.Forms.View.Details;
-            this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
+            this.usersListView.SelectedIndexChanged += new System.EventHandler(this.UsersListView_SelectedIndexChanged);
             // 
             // label1
             // 

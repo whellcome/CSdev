@@ -29,5 +29,10 @@ namespace NutritionCalculator.Models
         public User()
         {
         }
+
+        public override string ToString()
+        {
+            return $"{Name} : {BirthDate}";
+        }
     }
 }

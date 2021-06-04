@@ -1,5 +1,6 @@
 ﻿using NodaTime;
 using NutritionCalculator.Controllers;
+using NutritionCalculator.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,17 @@ namespace NutritionCalculator.Forms
             InitializeComponent();
         }
 
-        private void usersListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void UsersListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                NutritionCalculatorData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         private void UsersListForm_Load(object sender, EventArgs e)
