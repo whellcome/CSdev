@@ -36,7 +36,7 @@ namespace NutritionCalculator.Forms
         {
             if (NutritionCalculatorData.CurrentUser != null)
             {
-                buttonSelectUser.Text = $"User: {NutritionCalculatorData.CurrentUser.Name} " +
+                buttonSelectUser.Text = $"User: {NutritionCalculatorData.CurrentUser.Name} \n" +
                                         $"Change user";
             }
             else
