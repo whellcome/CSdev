@@ -32,10 +32,9 @@ namespace NutritionCalculator.Forms
                 foreach (var user in userController.Users)
                 {
                     var row = new string[] { user.Name, user.BirthDate.ToString() };
-                    _ = new ListViewItem(row)
-                    {
-                        Tag = user
-                    };
+                    var lvi = new ListViewItem(row);
+                    lvi.Tag = user;
+                    usersListView.Items.Add(lvi);
                 }
             }
             else

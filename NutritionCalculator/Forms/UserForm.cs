@@ -1,4 +1,5 @@
-﻿using NutritionCalculator.Controllers;
+﻿using NodaTime;
+using NutritionCalculator.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,15 @@ namespace NutritionCalculator.Forms
 
         private void btCreateUser_Click(object sender, EventArgs e)
         {
+            UserController userController = new UserController();
+            var localDate = LocalDateTime.FromDateTime(dtBirthDate.Value);
 
+            userController.SetNewUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
+                                      Int32.Parse(tbHeight.Text), rbUnitSystem1.Checked, cbGlutenFree.Checked,
+                                      cbCalculateCalories.Checked);
+            UsersListForm usersListForm = new UsersListForm();
+            usersListForm.Show();
+            this.Close();
         }
     }
 }

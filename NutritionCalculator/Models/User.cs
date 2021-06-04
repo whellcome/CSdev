@@ -25,5 +25,9 @@ namespace NutritionCalculator.Models
             GlutenFree = glutenFree;
             CalculateCalories = calculateCalories;
         }
+
+        public User()
+        {
+        }
     }
 }

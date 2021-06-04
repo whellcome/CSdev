@@ -38,6 +38,7 @@ namespace NutritionCalculator.Forms
             // 
             // usersListView
             // 
+            this.usersListView.AllowColumnReorder = true;
             this.usersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chName,
             this.chBirthDate});
@@ -49,7 +50,7 @@ namespace NutritionCalculator.Forms
             this.usersListView.Size = new System.Drawing.Size(326, 356);
             this.usersListView.TabIndex = 0;
             this.usersListView.UseCompatibleStateImageBehavior = false;
-            this.usersListView.View = System.Windows.Forms.View.List;
+            this.usersListView.View = System.Windows.Forms.View.Details;
             this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
             // 
             // label1

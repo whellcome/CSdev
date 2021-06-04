@@ -39,7 +39,7 @@ namespace NutritionCalculator.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 47);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Выбрать пользователя";
+            this.button1.Text = "Select a user";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -47,7 +47,7 @@ namespace NutritionCalculator.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(287, 450);
             this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.Text = "Nutrition Calculator";
