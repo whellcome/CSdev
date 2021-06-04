@@ -18,19 +18,27 @@ namespace NutritionCalculator.Forms
         public UsersListForm()
         {
             InitializeComponent();
+            
         }
 
-        private void UsersListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
             try
             {
                 NutritionCalculatorData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
-                this.Close();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+            UserForm userForm = new UserForm(true);
+            userForm.Show();
+            this.Close();
+        }
+
+        private void UsersListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void UsersListForm_Load(object sender, EventArgs e)
@@ -38,12 +46,20 @@ namespace NutritionCalculator.Forms
             var userController = new UserController();
             if (userController.Users.Count > 0)
             {
+                ListViewExtender extender = new ListViewExtender(usersListView);
+                
+                ListViewButtonColumn buttonAction = new ListViewButtonColumn(2);
+                buttonAction.Click += OnButtonActionClick;
+                buttonAction.FixedWidth = true;
+
+                extender.AddColumn(buttonAction);
+
                 foreach (var user in userController.Users)
                 {
                     var row = new string[] { user.Name, user.BirthDate.ToString() };
                     var lvi = new ListViewItem(row);
                     lvi.Tag = user;
-                    usersListView.Items.Add(lvi);
+                    usersListView.Items.Add(lvi).SubItems.Add("...");
                 }
             }
             else
@@ -60,6 +76,19 @@ namespace NutritionCalculator.Forms
             UserForm userForm = new UserForm();
             userForm.Show();
             this.Close();
+        }
+
+        private void usersListView_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                NutritionCalculatorData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

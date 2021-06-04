@@ -60,6 +60,7 @@
     <Compile Include="Controllers\DataJsonController.cs" />
     <Compile Include="Controllers\IDataController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Forms\ListViewExtender.cs" />
     <Compile Include="NutritionCalculatorData.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>

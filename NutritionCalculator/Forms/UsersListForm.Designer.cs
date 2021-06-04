@@ -30,10 +30,11 @@ namespace NutritionCalculator.Forms
         private void InitializeComponent()
         {
             this.usersListView = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.chEdit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // usersListView
@@ -41,17 +42,29 @@ namespace NutritionCalculator.Forms
             this.usersListView.AllowColumnReorder = true;
             this.usersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chName,
-            this.chBirthDate});
+            this.chBirthDate,
+            this.chEdit});
             this.usersListView.FullRowSelect = true;
             this.usersListView.GridLines = true;
             this.usersListView.HideSelection = false;
             this.usersListView.Location = new System.Drawing.Point(12, 82);
             this.usersListView.Name = "usersListView";
-            this.usersListView.Size = new System.Drawing.Size(326, 356);
+            this.usersListView.Size = new System.Drawing.Size(331, 356);
             this.usersListView.TabIndex = 0;
             this.usersListView.UseCompatibleStateImageBehavior = false;
             this.usersListView.View = System.Windows.Forms.View.Details;
             this.usersListView.SelectedIndexChanged += new System.EventHandler(this.UsersListView_SelectedIndexChanged);
+            this.usersListView.DoubleClick += new System.EventHandler(this.usersListView_DoubleClick);
+            // 
+            // chName
+            // 
+            this.chName.Text = "Name";
+            this.chName.Width = 200;
+            // 
+            // chBirthDate
+            // 
+            this.chBirthDate.Text = "Date of Birth";
+            this.chBirthDate.Width = 100;
             // 
             // label1
             // 
@@ -64,32 +77,27 @@ namespace NutritionCalculator.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "List of users. Select a user to continue.";
             // 
-            // chName
-            // 
-            this.chName.Text = "Name";
-            this.chName.Width = 200;
-            // 
-            // chBirthDate
-            // 
-            this.chBirthDate.Text = "Date of Birth";
-            this.chBirthDate.Width = 100;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(17, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(320, 34);
+            this.button1.Size = new System.Drawing.Size(326, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "Create New User";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chEdit
+            // 
+            this.chEdit.Text = "...";
+            this.chEdit.Width = 25;
+            // 
             // UsersListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 450);
+            this.ClientSize = new System.Drawing.Size(355, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usersListView);
@@ -108,5 +116,6 @@ namespace NutritionCalculator.Forms
         private System.Windows.Forms.ColumnHeader chBirthDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader chEdit;
     }
 }

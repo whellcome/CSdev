@@ -14,14 +14,28 @@ namespace NutritionCalculator.Forms
 {
     public partial class UserForm : Form
     {
-        public UserForm()
+        private bool editMode { get; }
+        public UserForm(bool editMode = false)
         {
             InitializeComponent();
+            this.editMode = editMode;
         }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            var userController = new UserController();
+            if (editMode)
+            {
+                var currentUser = NutritionCalculatorData.CurrentUser;
+                btCreateUser.Text = "Save user's data";
+
+                tbUserName.Text = currentUser.Name;
+                dtBirthDate.Value = currentUser.BirthDate.ToDateTimeUnspecified();
+                tbWeight.Text = currentUser.Weight.ToString();
+                tbHeight.Text = currentUser.Height.ToString();
+                rbUnitSystem1.Checked = currentUser.UnitSystemMgdL;
+                cbGlutenFree.Checked = currentUser.GlutenFree;
+                cbCalculateCalories.Checked = currentUser.CalculateCalories;
+            }
         }
 
         private void tbWeight_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,10 +59,18 @@ namespace NutritionCalculator.Forms
         {
             UserController userController = new UserController();
             var localDate = LocalDateTime.FromDateTime(dtBirthDate.Value);
-
-            userController.SetNewUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
+            if (editMode)
+            {
+                userController.UpdateUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
                                       Int32.Parse(tbHeight.Text), rbUnitSystem1.Checked, cbGlutenFree.Checked,
                                       cbCalculateCalories.Checked);
+            }
+            else
+            {
+                userController.SetNewUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
+                                          Int32.Parse(tbHeight.Text), rbUnitSystem1.Checked, cbGlutenFree.Checked,
+                                          cbCalculateCalories.Checked);
+            }
             UsersListForm usersListForm = new UsersListForm();
             usersListForm.Show();
             this.Close();

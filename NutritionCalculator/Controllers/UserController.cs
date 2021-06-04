@@ -30,6 +30,16 @@ namespace NutritionCalculator.Controllers
             CurrentUser = new User(name, birthDate, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
             Users.Add(CurrentUser);
             Save();
+            NutritionCalculatorData.CurrentUser = CurrentUser;
+        }
+
+        public void UpdateUser(string name, LocalDate birthDate, double weight, double height, bool unitSystemMgdL, bool glutenFree, bool calculateCalories)
+        {
+            var index = Users.FindIndex(u => u.Name == CurrentUser.Name && u.BirthDate == CurrentUser.BirthDate);
+            CurrentUser = new User(name, birthDate, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
+            Users[index] = CurrentUser;
+            Save();
+            NutritionCalculatorData.CurrentUser = CurrentUser;
         }
 
         public List<User> GetUsersData()
