@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NutritionCalculator.Controllers
 {
@@ -17,7 +18,22 @@ namespace NutritionCalculator.Controllers
             var currentUser = NutritionCalculatorData.CurrentUser; 
             InsulinPlans = GetInsulinPlans();
             UserInsulinPlans = InsulinPlans.FindAll(i => i.User == currentUser);
-            CurrentInsulinPlan = NutritionCalculatorData.CurrentInsulinPlan;
+            if (UserInsulinPlans.Count == 0)
+            {
+                CurrentInsulinPlan = new InsulinPlan(currentUser)
+                {
+                    SetNewItem()
+                };
+            }
+            else
+            {
+                CurrentInsulinPlan = NutritionCalculatorData.CurrentInsulinPlan;
+            }
+        }
+
+        public InsulinPlanItem SetNewItem()
+        {
+            return new InsulinPlanItem();
         }
 
         public void SetNew(string name, List<InsulinPlanItem> insulinPlan)
@@ -31,9 +47,9 @@ namespace NutritionCalculator.Controllers
                 newInsulinPlan.Add(item);
             }
             InsulinPlans.Add(newInsulinPlan);
-            Save();
             CurrentInsulinPlan = newInsulinPlan;
-            NutritionCalculatorData.CurrentInsulinPlan = newInsulinPlan;
+            Save();
+            
         }
 
         public void Update(InsulinPlan insulinPlan)

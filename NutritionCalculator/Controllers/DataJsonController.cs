@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Documents;
 
+
+
 namespace NutritionCalculator.Controllers
 {
     class DataJsonController : IDataController
@@ -30,11 +32,14 @@ namespace NutritionCalculator.Controllers
         public void Save<T>(List<T> items) where T : class
         {
             var fileName = typeof(T).Name + ".json";
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.CheckAdditionalContent = true;
             using (StreamWriter sw = new StreamWriter(fileName))
             {
                 foreach (T item in items)
                 {
-                    sw.WriteLine(JsonConvert.SerializeObject(item));
+                    var jsonStr = JsonConvert.SerializeObject(item, typeof(T),serializerSettings);
+                    sw.WriteLine(jsonStr);
                 }
             }
         }

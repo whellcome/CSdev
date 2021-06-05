@@ -80,6 +80,7 @@ namespace NutritionCalculator.Forms
             this.btSave.TabIndex = 4;
             this.btSave.Text = "Save your insulin plan";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // InsulinPlanForm
             // 
@@ -95,6 +96,7 @@ namespace NutritionCalculator.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InsulinPlanForm";
             this.Text = "InsulinPlanForm";
+            this.Load += new System.EventHandler(this.InsulinPlanForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsulinPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

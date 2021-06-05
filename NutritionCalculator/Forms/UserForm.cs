@@ -52,7 +52,8 @@ namespace NutritionCalculator.Forms
 
         private void btAddInsulinPlan_Click(object sender, EventArgs e)
         {
-
+            InsulinPlanForm insulinPlanForm = new InsulinPlanForm();
+            insulinPlanForm.Show();
         }
 
         private void btCreateUser_Click(object sender, EventArgs e)
