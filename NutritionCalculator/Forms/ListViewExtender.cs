@@ -112,8 +112,7 @@ namespace NutritionCalculator.Forms
 
         public ListViewColumn GetColumn(int index)
         {
-            ListViewColumn column;
-            return _columns.TryGetValue(index, out column) ? column : null;
+            return _columns.TryGetValue(index, out ListViewColumn column) ? column : null;
         }
 
         public IEnumerable<ListViewColumn> Columns
@@ -153,7 +152,7 @@ namespace NutritionCalculator.Forms
         {
             get
             {
-                return Extender == null ? null : Extender.Font;
+                return Extender?.Font;
             }
         }
 
@@ -161,7 +160,7 @@ namespace NutritionCalculator.Forms
         {
             get
             {
-                return Extender == null ? null : Extender.ListView;
+                return Extender?.ListView;
             }
         }
 
@@ -169,10 +168,7 @@ namespace NutritionCalculator.Forms
 
         public virtual void MouseClick(MouseEventArgs e, ListViewItem item, ListViewItem.ListViewSubItem subItem)
         {
-            if (Click != null)
-            {
-                Click(this, new ListViewColumnMouseEventArgs(e, item, subItem));
-            }
+            Click?.Invoke(this, new ListViewColumnMouseEventArgs(e, item, subItem));
         }
 
         public virtual void Invalidate(ListViewItem item, ListViewItem.ListViewSubItem subItem)

@@ -6,7 +6,11 @@ namespace NutritionCalculator.Models
 {
     public class InsulinPlan : List<InsulinPlanItem>
     {
-        private User user { get; }
+        public User User { get; }
         public string Name { get; set; }
+        public InsulinPlan(User user)
+        {
+            User = user;
+        }
     }
 }

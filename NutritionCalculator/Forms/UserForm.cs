@@ -61,13 +61,13 @@ namespace NutritionCalculator.Forms
             var localDate = LocalDateTime.FromDateTime(dtBirthDate.Value);
             if (editMode)
             {
-                userController.UpdateUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
+                userController.Update(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
                                       Int32.Parse(tbHeight.Text), rbUnitSystem1.Checked, cbGlutenFree.Checked,
                                       cbCalculateCalories.Checked);
             }
             else
             {
-                userController.SetNewUser(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
+                userController.SetNew(tbUserName.Text, localDate.Date, Int32.Parse(tbWeight.Text),
                                           Int32.Parse(tbHeight.Text), rbUnitSystem1.Checked, cbGlutenFree.Checked,
                                           cbCalculateCalories.Checked);
             }

@@ -59,7 +59,14 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DataJsonController.cs" />
     <Compile Include="Controllers\IDataController.cs" />
+    <Compile Include="Controllers\InsulinPlanController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Forms\InsulinPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsulinPlanForm.Designer.cs">
+      <DependentUpon>InsulinPlanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListViewExtender.cs" />
     <Compile Include="NutritionCalculatorData.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -93,6 +100,9 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\InsulinPlanForm.resx">
+      <DependentUpon>InsulinPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

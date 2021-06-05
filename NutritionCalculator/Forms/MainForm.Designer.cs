@@ -41,7 +41,7 @@ namespace NutritionCalculator.Forms
             this.buttonSelectUser.TabIndex = 0;
             this.buttonSelectUser.Text = "Select a user";
             this.buttonSelectUser.UseVisualStyleBackColor = true;
-            this.buttonSelectUser.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSelectUser.Click += new System.EventHandler(this.Button1_Click);
             // 
             // MainForm
             // 
