@@ -1,16 +1,13 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 
 namespace NutritionCalculator.Models
 {
     
     public class InsulinPlan
     {
-        public int Id { get; }
+        public int Id { get; set; }
         
-        public User User { get; }
+        public User User { get; set; }
         
         public string Name { get; set; }
         public List<InsulinPlanItem> Plan { get; set; }
@@ -18,7 +15,6 @@ namespace NutritionCalculator.Models
         {
             User = user;
             Plan = new List<InsulinPlanItem>();
-            Id = (int)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
         }
 
         public override string ToString()

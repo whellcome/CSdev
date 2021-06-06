@@ -23,7 +23,6 @@ D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Buffers.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Memory.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Numerics.Vectors.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Text.Encodings.Web.dll
-D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Text.Json.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.ValueTuple.dll
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
@@ -31,7 +30,5 @@ D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Buffers.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Memory.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Numerics.Vectors.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Text.Encodings.Web.xml
-D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Text.Json.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.ValueTuple.xml
-D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.AssemblyReference.cache

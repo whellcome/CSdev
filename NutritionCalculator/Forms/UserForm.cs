@@ -1,13 +1,6 @@
 ﻿using NodaTime;
 using NutritionCalculator.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutritionCalculator.Forms
@@ -56,8 +49,9 @@ namespace NutritionCalculator.Forms
         private void btAddInsulinPlan_Click(object sender, EventArgs e)
         {
             if (!editMode) NewUserSave();
-            InsulinPlanForm insulinPlanForm = new InsulinPlanForm(editMode);
+            InsulinPlanForm insulinPlanForm = new InsulinPlanForm(cbInsulinPlan.SelectedItem != null);
             insulinPlanForm.Show();
+            Close();
         }
 
         private void btCreateUser_Click(object sender, EventArgs e)

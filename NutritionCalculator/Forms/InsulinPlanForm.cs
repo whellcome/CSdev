@@ -1,12 +1,5 @@
 ﻿using NutritionCalculator.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutritionCalculator.Forms
@@ -31,10 +24,14 @@ namespace NutritionCalculator.Forms
         private void btSave_Click(object sender, EventArgs e)
         {
             InsulinPlanController.CurrentInsulinPlan.Name = tbName.Text;
+            InsulinPlanController.CurrentInsulinPlan.User = NCData.CurrentUser;
             if (editMode)
                 InsulinPlanController.Update(InsulinPlanController.CurrentInsulinPlan);
             else
                 InsulinPlanController.SetNew(InsulinPlanController.CurrentInsulinPlan);
+            UserForm userForm = new UserForm(true);
+            userForm.Show();
+            Close();
         }
 
         private void btAdd_Click(object sender, EventArgs e)

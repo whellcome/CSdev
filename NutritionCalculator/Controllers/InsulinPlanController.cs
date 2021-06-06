@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NutritionCalculator.Controllers
 {
@@ -15,17 +12,17 @@ namespace NutritionCalculator.Controllers
         public InsulinPlan CurrentInsulinPlan { get; set; }
         public InsulinPlanController()
         {
-            var currentUser = NCData.CurrentUser; 
+            
             InsulinPlans = GetInsulinPlans();
-            UserInsulinPlans = InsulinPlans.FindAll(i => i.User.Name == currentUser.Name && i.User.BirthDate == currentUser.BirthDate);
+            UserInsulinPlans = InsulinPlans.FindAll(i => i.User.Name == NCData.CurrentUser.Name && i.User.BirthDate == NCData.CurrentUser.BirthDate);
             if (UserInsulinPlans.Count <= 0)
             {
-                CurrentInsulinPlan = new InsulinPlan(currentUser);
+                CurrentInsulinPlan = new InsulinPlan(NCData.CurrentUser);
                 CurrentInsulinPlan.Plan.Add(SetNewItem());
             }
             else
             {
-                CurrentInsulinPlan = UserInsulinPlans.SingleOrDefault(i => i.Id == currentUser.InsulinPlan) ?? UserInsulinPlans.First();// NutritionCalculatorData.CurrentInsulinPlan;
+                CurrentInsulinPlan = UserInsulinPlans.SingleOrDefault(i => i.Id == NCData.CurrentUser.InsulinPlan) ?? UserInsulinPlans.First();// NutritionCalculatorData.CurrentInsulinPlan;
             }
         }
 
@@ -41,10 +38,11 @@ namespace NutritionCalculator.Controllers
                 foreach (InsulinPlanItem item in insulinPlan.Plan)
                 {
                     CurrentInsulinPlan.Plan.Add(item);
-                }
-                InsulinPlans.Add(CurrentInsulinPlan);
-                Save();
+                }   
             }
+            CurrentInsulinPlan.Id = (int)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
+            InsulinPlans.Add(CurrentInsulinPlan);
+            Save();
         }
 
         public void Update(InsulinPlan insulinPlan)
@@ -52,8 +50,8 @@ namespace NutritionCalculator.Controllers
             var currentInsulinPlan = UserInsulinPlans.SingleOrDefault(i => i.Id == NCData.CurrentUser.InsulinPlan);
             var index = InsulinPlans.FindIndex(i => i.User == currentInsulinPlan.User && i.Id == currentInsulinPlan.Id);
             InsulinPlans[index] = insulinPlan;
-            Save();
             NCData.CurrentUser.InsulinPlan = insulinPlan.Id;
+            Save();
         }
 
         private List<InsulinPlan> GetInsulinPlans()
@@ -63,8 +61,8 @@ namespace NutritionCalculator.Controllers
 
         public void Save()
         {
-            Save(InsulinPlans);
             NCData.CurrentUser.InsulinPlan = CurrentInsulinPlan.Id;
+            Save(InsulinPlans);
             NCData.EventHandler(typeof(InsulinPlan).Name);
         }
 
