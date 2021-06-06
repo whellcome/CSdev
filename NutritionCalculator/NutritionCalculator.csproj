@@ -94,7 +94,7 @@
       <DependentUpon>InsulinPlanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListViewExtender.cs" />
-    <Compile Include="NutritionCalculatorData.cs" />
+    <Compile Include="NCData.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

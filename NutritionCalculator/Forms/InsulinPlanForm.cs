@@ -13,10 +13,12 @@ namespace NutritionCalculator.Forms
 {
     public partial class InsulinPlanForm : Form
     {
+        private bool editMode { get; }
         private InsulinPlanController InsulinPlanController { get; set; }
-        public InsulinPlanForm()
+        public InsulinPlanForm(bool editMode = false)
         {
             InitializeComponent();
+            this.editMode = editMode;
         }
 
         private void InsulinPlanForm_Load(object sender, EventArgs e)
@@ -28,7 +30,11 @@ namespace NutritionCalculator.Forms
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            InsulinPlanController.SetNew(tbName.Text, InsulinPlanController.CurrentInsulinPlan.Plan);
+            InsulinPlanController.CurrentInsulinPlan.Name = tbName.Text;
+            if (editMode)
+                InsulinPlanController.Update(InsulinPlanController.CurrentInsulinPlan);
+            else
+                InsulinPlanController.SetNew(InsulinPlanController.CurrentInsulinPlan);
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -39,8 +45,9 @@ namespace NutritionCalculator.Forms
 
         private void btRemove_Click(object sender, EventArgs e)
         {
-            var currItem = dgvInsulinPlan.CurrentRow;
-            dgvInsulinPlan.Rows.Remove(currItem);
+            var currItem = dgvInsulinPlan.CurrentRow.Index;
+            InsulinPlanController.CurrentInsulinPlan.Plan.Remove(InsulinPlanController.CurrentInsulinPlan.Plan[currItem]);
+            RefreshGridView();
         }
         
         private void RefreshGridView()

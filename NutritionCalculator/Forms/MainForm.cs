@@ -34,9 +34,9 @@ namespace NutritionCalculator.Forms
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            if (NutritionCalculatorData.CurrentUser != null)
+            if (NCData.CurrentUser != null)
             {
-                buttonSelectUser.Text = $"User: {NutritionCalculatorData.CurrentUser.Name} \n" +
+                buttonSelectUser.Text = $"User: {NCData.CurrentUser.Name} \n" +
                                         $"Change user";
             }
             else

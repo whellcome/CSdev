@@ -25,7 +25,7 @@ namespace NutritionCalculator.Forms
         {
             try
             {
-                NutritionCalculatorData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
+                NCData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
             }
             catch (Exception ex)
             {
@@ -82,7 +82,7 @@ namespace NutritionCalculator.Forms
         {
             try
             {
-                NutritionCalculatorData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
+                NCData.CurrentUser = (User)usersListView.SelectedItems[0].Tag;
                 this.Close();
             }
             catch (Exception ex)

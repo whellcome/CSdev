@@ -22,24 +22,33 @@ namespace NutritionCalculator.Controllers
         public UserController()
         {
             Users = GetUsersData();
-            CurrentUser = NutritionCalculatorData.CurrentUser ?? Users.FirstOrDefault();
+            CurrentUser = NCData.CurrentUser ?? Users.FirstOrDefault();
+            NCData.EventHandler = new NCData.DataSaved(eventDataSaved);
         }
 
-        public void SetNew(string name, LocalDate birthDate, double weight, double height, bool unitSystemMgdL, bool glutenFree, bool calculateCalories)
+        private void eventDataSaved(string data)
         {
-            CurrentUser = new User(name, birthDate, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
+            if (data.Contains(typeof(InsulinPlan).Name))
+            {
+                Save();
+            }
+        }
+
+        public void SetNew(string name, LocalDate birthDate, InsulinPlan insulinPlan, double weight, double height, bool unitSystemMgdL, bool glutenFree, bool calculateCalories)
+        {
+            CurrentUser = new User(name, birthDate, insulinPlan, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
             Users.Add(CurrentUser);
             Save();
-            NutritionCalculatorData.CurrentUser = CurrentUser;
+            NCData.CurrentUser = CurrentUser;
         }
 
-        public void Update(string name, LocalDate birthDate, double weight, double height, bool unitSystemMgdL, bool glutenFree, bool calculateCalories)
+        public void Update(string name, LocalDate birthDate, InsulinPlan insulinPlan, double weight, double height, bool unitSystemMgdL, bool glutenFree, bool calculateCalories)
         {
             var index = Users.FindIndex(u => u.Name == CurrentUser.Name && u.BirthDate == CurrentUser.BirthDate);
-            CurrentUser = new User(name, birthDate, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
+            CurrentUser = new User(name, birthDate, insulinPlan, weight, height, unitSystemMgdL, glutenFree, calculateCalories);
             Users[index] = CurrentUser;
             Save();
-            NutritionCalculatorData.CurrentUser = CurrentUser;
+            NCData.CurrentUser = CurrentUser;
         }
 
         public List<User> GetUsersData()
@@ -50,7 +59,7 @@ namespace NutritionCalculator.Controllers
         public void Save()
         {
             Save(Users);
-            NutritionCalculatorData.CurrentUser = CurrentUser;
+            NCData.CurrentUser = CurrentUser;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace NutritionCalculator.Controllers
         public InsulinPlan CurrentInsulinPlan { get; set; }
         public InsulinPlanController()
         {
-            var currentUser = NutritionCalculatorData.CurrentUser; 
+            var currentUser = NCData.CurrentUser; 
             InsulinPlans = GetInsulinPlans();
             UserInsulinPlans = InsulinPlans.FindAll(i => i.User.Name == currentUser.Name && i.User.BirthDate == currentUser.BirthDate);
             if (UserInsulinPlans.Count <= 0)
@@ -25,7 +25,7 @@ namespace NutritionCalculator.Controllers
             }
             else
             {
-                CurrentInsulinPlan = currentUser.InsulinPlan ?? UserInsulinPlans.First();// NutritionCalculatorData.CurrentInsulinPlan;
+                CurrentInsulinPlan = UserInsulinPlans.SingleOrDefault(i => i.Id == currentUser.InsulinPlan) ?? UserInsulinPlans.First();// NutritionCalculatorData.CurrentInsulinPlan;
             }
         }
 
@@ -34,29 +34,26 @@ namespace NutritionCalculator.Controllers
             return new InsulinPlanItem();
         }
 
-        public void SetNew(string name, List<InsulinPlanItem> insulinPlan)
+        public void SetNew(InsulinPlan insulinPlan)
         {
-            var newInsulinPlan = new InsulinPlan(NutritionCalculatorData.CurrentUser)
+            if (CurrentInsulinPlan.Plan.Count == 0)
             {
-                Name = name
-            };
-            foreach (InsulinPlanItem item in insulinPlan)
-            {
-                newInsulinPlan.Plan.Add(item);
+                foreach (InsulinPlanItem item in insulinPlan.Plan)
+                {
+                    CurrentInsulinPlan.Plan.Add(item);
+                }
+                InsulinPlans.Add(CurrentInsulinPlan);
+                Save();
             }
-            InsulinPlans.Add(newInsulinPlan);
-            CurrentInsulinPlan = newInsulinPlan;
-            Save();
-            
         }
 
         public void Update(InsulinPlan insulinPlan)
         {
-            var currentInsulinPlan = NutritionCalculatorData.CurrentInsulinPlan;
-            var index = InsulinPlans.FindIndex(i => i.User == currentInsulinPlan.User && i.Name == currentInsulinPlan.Name);
+            var currentInsulinPlan = UserInsulinPlans.SingleOrDefault(i => i.Id == NCData.CurrentUser.InsulinPlan);
+            var index = InsulinPlans.FindIndex(i => i.User == currentInsulinPlan.User && i.Id == currentInsulinPlan.Id);
             InsulinPlans[index] = insulinPlan;
             Save();
-            NutritionCalculatorData.CurrentInsulinPlan = insulinPlan;
+            NCData.CurrentUser.InsulinPlan = insulinPlan.Id;
         }
 
         private List<InsulinPlan> GetInsulinPlans()
@@ -67,7 +64,8 @@ namespace NutritionCalculator.Controllers
         public void Save()
         {
             Save(InsulinPlans);
-            NutritionCalculatorData.CurrentInsulinPlan = CurrentInsulinPlan;
+            NCData.CurrentUser.InsulinPlan = CurrentInsulinPlan.Id;
+            NCData.EventHandler(typeof(InsulinPlan).Name);
         }
 
     }

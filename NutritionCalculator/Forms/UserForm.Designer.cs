@@ -114,15 +114,17 @@ namespace NutritionCalculator.Forms
             // 
             // btAddInsulinPlan
             // 
-            this.btAddInsulinPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btAddInsulinPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btAddInsulinPlan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btAddInsulinPlan.Location = new System.Drawing.Point(371, 152);
+            this.btAddInsulinPlan.Location = new System.Drawing.Point(371, 151);
             this.btAddInsulinPlan.Margin = new System.Windows.Forms.Padding(0);
             this.btAddInsulinPlan.Name = "btAddInsulinPlan";
+            this.btAddInsulinPlan.Padding = new System.Windows.Forms.Padding(0, 1, 0, 4);
             this.btAddInsulinPlan.Size = new System.Drawing.Size(24, 24);
             this.btAddInsulinPlan.TabIndex = 7;
-            this.btAddInsulinPlan.Text = "+";
+            this.btAddInsulinPlan.Text = ":::";
             this.btAddInsulinPlan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btAddInsulinPlan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btAddInsulinPlan.UseVisualStyleBackColor = true;
             this.btAddInsulinPlan.Click += new System.EventHandler(this.btAddInsulinPlan_Click);
             // 

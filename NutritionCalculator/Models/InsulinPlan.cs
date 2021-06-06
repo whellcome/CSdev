@@ -8,6 +8,7 @@ namespace NutritionCalculator.Models
     
     public class InsulinPlan
     {
+        public int Id { get; }
         
         public User User { get; }
         
@@ -17,6 +18,7 @@ namespace NutritionCalculator.Models
         {
             User = user;
             Plan = new List<InsulinPlanItem>();
+            Id = (int)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
         }
 
         public override string ToString()
