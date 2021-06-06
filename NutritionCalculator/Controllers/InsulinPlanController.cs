@@ -17,17 +17,15 @@ namespace NutritionCalculator.Controllers
         {
             var currentUser = NutritionCalculatorData.CurrentUser; 
             InsulinPlans = GetInsulinPlans();
-            UserInsulinPlans = InsulinPlans.FindAll(i => i.User == currentUser);
-            if (UserInsulinPlans.Count == 0)
+            UserInsulinPlans = InsulinPlans.FindAll(i => i.User.Name == currentUser.Name && i.User.BirthDate == currentUser.BirthDate);
+            if (UserInsulinPlans.Count <= 0)
             {
-                CurrentInsulinPlan = new InsulinPlan(currentUser)
-                {
-                    SetNewItem()
-                };
+                CurrentInsulinPlan = new InsulinPlan(currentUser);
+                CurrentInsulinPlan.Plan.Add(SetNewItem());
             }
             else
             {
-                CurrentInsulinPlan = NutritionCalculatorData.CurrentInsulinPlan;
+                CurrentInsulinPlan = currentUser.InsulinPlan ?? UserInsulinPlans.First();// NutritionCalculatorData.CurrentInsulinPlan;
             }
         }
 
@@ -44,7 +42,7 @@ namespace NutritionCalculator.Controllers
             };
             foreach (InsulinPlanItem item in insulinPlan)
             {
-                newInsulinPlan.Add(item);
+                newInsulinPlan.Plan.Add(item);
             }
             InsulinPlans.Add(newInsulinPlan);
             CurrentInsulinPlan = newInsulinPlan;

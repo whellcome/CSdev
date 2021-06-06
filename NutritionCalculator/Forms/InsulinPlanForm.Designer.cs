@@ -34,6 +34,8 @@ namespace NutritionCalculator.Forms
             this.tbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btSave = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsulinPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@ namespace NutritionCalculator.Forms
             this.dgvInsulinPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsulinPlan.Location = new System.Drawing.Point(12, 76);
             this.dgvInsulinPlan.Name = "dgvInsulinPlan";
-            this.dgvInsulinPlan.Size = new System.Drawing.Size(459, 261);
+            this.dgvInsulinPlan.Size = new System.Drawing.Size(423, 261);
             this.dgvInsulinPlan.TabIndex = 1;
             // 
             // tbName
@@ -82,11 +84,35 @@ namespace NutritionCalculator.Forms
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // btAdd
+            // 
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btAdd.Location = new System.Drawing.Point(445, 76);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(27, 27);
+            this.btAdd.TabIndex = 5;
+            this.btAdd.Text = "+";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btRemove
+            // 
+            this.btRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRemove.Location = new System.Drawing.Point(445, 110);
+            this.btRemove.Name = "btRemove";
+            this.btRemove.Size = new System.Drawing.Size(27, 27);
+            this.btRemove.TabIndex = 6;
+            this.btRemove.Text = "-";
+            this.btRemove.UseVisualStyleBackColor = true;
+            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
+            // 
             // InsulinPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 425);
+            this.Controls.Add(this.btRemove);
+            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbName);
@@ -110,5 +136,7 @@ namespace NutritionCalculator.Forms
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btRemove;
     }
 }

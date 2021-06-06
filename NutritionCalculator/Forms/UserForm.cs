@@ -27,9 +27,17 @@ namespace NutritionCalculator.Forms
             {
                 var currentUser = NutritionCalculatorData.CurrentUser;
                 btCreateUser.Text = "Save user's data";
-
+                
                 tbUserName.Text = currentUser.Name;
                 dtBirthDate.Value = currentUser.BirthDate.ToDateTimeUnspecified();
+                var insulinPlanController = new InsulinPlanController();
+                //cbInsulinPlan.DataSource = insulinPlanController.UserInsulinPlans;
+                foreach (var item in insulinPlanController.UserInsulinPlans)
+                {
+                    cbInsulinPlan.Items.Add(item);
+                }
+                cbInsulinPlan.SelectedItem = insulinPlanController.CurrentInsulinPlan;
+
                 tbWeight.Text = currentUser.Weight.ToString();
                 tbHeight.Text = currentUser.Height.ToString();
                 rbUnitSystem1.Checked = currentUser.UnitSystemMgdL;

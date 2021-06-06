@@ -17,7 +17,6 @@ namespace NutritionCalculator.Controllers
             {
                 using (StreamReader sr = new StreamReader(fileName))
                 {
-                
                     string item;
                     while ((item = sr.ReadLine()) != null)
                     {
@@ -32,14 +31,11 @@ namespace NutritionCalculator.Controllers
         public void Save<T>(List<T> items) where T : class
         {
             var fileName = typeof(T).Name + ".json";
-            var serializerSettings = new JsonSerializerSettings();
-            serializerSettings.CheckAdditionalContent = true;
             using (StreamWriter sw = new StreamWriter(fileName))
             {
                 foreach (T item in items)
                 {
-                    var jsonStr = JsonConvert.SerializeObject(item, typeof(T),serializerSettings);
-                    sw.WriteLine(jsonStr);
+                    sw.WriteLine(JsonConvert.SerializeObject(item));
                 }
             }
         }
