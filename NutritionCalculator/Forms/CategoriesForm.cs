@@ -28,25 +28,23 @@ namespace NutritionCalculator.Forms
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            var list = categoriesBindingSource.List;
-            CategoriesController.Categories.Clear();
-            foreach (var item in list)
-            {
-                CategoriesController.Categories.Add((Models.Category)item);
-
-                CategoriesController.Save();
-            }
-
+            CategoriesController.Categories.RemoveAll(c => c.Name == null);
+            CategoriesController.Save();
+            CategoriesController.Categories.Add(CategoriesController.SetNewItem());
+            dgvCategoriesRefresh();
         }
         private void dgvCategories_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            var list = categoriesBindingSource.List;
             if (dgvCategories.CurrentRow != null && dgvCategories.CurrentRow.Index == CategoriesController.Categories.Count-1)
             {
                 CategoriesController.Categories.Add(CategoriesController.SetNewItem());
-                dgvCategories.DataSource = null;
-                dgvCategories.DataSource = CategoriesController.Categories;
+                dgvCategoriesRefresh();
             }
+        }
+        private void dgvCategoriesRefresh()
+        {
+            dgvCategories.DataSource = null;
+            dgvCategories.DataSource = CategoriesController.Categories;
         }
     }
 }

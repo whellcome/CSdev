@@ -38,7 +38,7 @@ namespace NutritionCalculator.Forms
             this.categoriesControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
@@ -71,10 +71,12 @@ namespace NutritionCalculator.Forms
             // 
             // dgvCategories
             // 
+            this.dgvCategories.AutoGenerateColumns = false;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name});
-            this.dgvCategories.Location = new System.Drawing.Point(12, 59);
+            this.nameDataGridViewTextBoxColumn});
+            this.dgvCategories.DataSource = this.categoriesBindingSource;
+            this.dgvCategories.Location = new System.Drawing.Point(13, 65);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.Size = new System.Drawing.Size(312, 386);
             this.dgvCategories.TabIndex = 2;
@@ -97,11 +99,12 @@ namespace NutritionCalculator.Forms
             // 
             this.categoriesControllerBindingSource2.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
             // 
-            // Name
+            // nameDataGridViewTextBoxColumn
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.Width = 270;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 270;
             // 
             // CategoriesForm
             // 
@@ -135,6 +138,6 @@ namespace NutritionCalculator.Forms
         private System.Windows.Forms.BindingSource categoriesBindingSource2;
         private System.Windows.Forms.BindingSource categoriesControllerBindingSource1;
         private System.Windows.Forms.BindingSource categoriesControllerBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
