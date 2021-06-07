@@ -30,25 +30,42 @@ namespace NutritionCalculator.Forms
         private void InitializeComponent()
         {
             this.buttonSelectUser = new System.Windows.Forms.Button();
+            this.btCategories = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSelectUser
             // 
             this.buttonSelectUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelectUser.Location = new System.Drawing.Point(12, 12);
+            this.buttonSelectUser.Location = new System.Drawing.Point(13, 15);
+            this.buttonSelectUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSelectUser.Name = "buttonSelectUser";
-            this.buttonSelectUser.Size = new System.Drawing.Size(250, 47);
+            this.buttonSelectUser.Size = new System.Drawing.Size(290, 58);
             this.buttonSelectUser.TabIndex = 0;
             this.buttonSelectUser.Text = "Select a user";
             this.buttonSelectUser.UseVisualStyleBackColor = true;
             this.buttonSelectUser.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // btCategories
+            // 
+            this.btCategories.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCategories.Location = new System.Drawing.Point(13, 446);
+            this.btCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCategories.Name = "btCategories";
+            this.btCategories.Size = new System.Drawing.Size(290, 58);
+            this.btCategories.TabIndex = 1;
+            this.btCategories.Text = "Categories";
+            this.btCategories.UseVisualStyleBackColor = true;
+            this.btCategories.Click += new System.EventHandler(this.btCategories_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 450);
+            this.ClientSize = new System.Drawing.Size(316, 554);
+            this.Controls.Add(this.btCategories);
             this.Controls.Add(this.buttonSelectUser);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Nutrition Calculator";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
@@ -60,5 +77,6 @@ namespace NutritionCalculator.Forms
         #endregion
 
         private System.Windows.Forms.Button buttonSelectUser;
+        private System.Windows.Forms.Button btCategories;
     }
 }

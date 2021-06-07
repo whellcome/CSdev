@@ -45,5 +45,17 @@ namespace NutritionCalculator.Forms
             }
             this.Refresh();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CalculateForm calculateForm = new CalculateForm();
+            calculateForm.Show();
+        }
+
+        private void btCategories_Click(object sender, EventArgs e)
+        {
+            CategoriesForm categoriesForm = new CategoriesForm();
+            categoriesForm.Show();
+        }
     }
 }

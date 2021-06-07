@@ -32,3 +32,6 @@ D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Numerics.Vectors.xm
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Text.Encodings.Web.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\0\projects\VSC\CSdev\NutritionCalculator\bin\Debug\System.ValueTuple.xml
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.AssemblyReference.cache
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.CalculateForm.resources
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.CategoriesForm.resources

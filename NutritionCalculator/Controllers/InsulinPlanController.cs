@@ -1,4 +1,5 @@
-﻿using NutritionCalculator.Models;
+﻿using NodaTime;
+using NutritionCalculator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,5 +67,31 @@ namespace NutritionCalculator.Controllers
             NCData.EventHandler(typeof(InsulinPlan).Name);
         }
 
+        public static double GetInsulinDose(double amountCarbohydrates, double glucoseLevel = 0)
+        {
+            if (NCData.CurrentUser == null) return 0;
+            var localTime = new LocalDateTime().TimeOfDay;
+            localTime = LocalDateTime.FromDateTime(DateTime.Now).TimeOfDay;
+            double eatFactor = 0, targetFactor = 0, glucoseTarget = 0;
+            var insulinController = new InsulinPlanController();
+            var plan = insulinController.CurrentInsulinPlan.Plan;
+            plan.OrderBy(p => p.LocalTimeBegin);
+            if (localTime < plan.First().LocalTimeBegin || localTime > plan.Last().LocalTimeBegin)
+            {
+                var item = plan.Last();
+                eatFactor = item.EatFactor;
+                targetFactor = NCData.CurrentUser.UnitSystemMgdL ? item.TargetFactor / 100 : item.TargetFactor;
+                glucoseTarget = item.GlucoseLevelTarget;
+            }
+            else
+            {
+                var item = plan.FirstOrDefault(p => p.LocalTimeBegin <= localTime);
+                eatFactor = item.EatFactor;
+                targetFactor = NCData.CurrentUser.UnitSystemMgdL ? item.TargetFactor/100 : item.TargetFactor;
+                glucoseTarget = item.GlucoseLevelTarget;
+            }
+            var resultat = amountCarbohydrates * eatFactor / 100 + (glucoseLevel - glucoseTarget) * targetFactor;
+            return resultat;
+        }
     }
 }

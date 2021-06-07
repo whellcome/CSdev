@@ -79,11 +79,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DataJsonController.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\IDataController.cs" />
     <Compile Include="Controllers\InsulinPlanController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Forms\CalculateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalculateForm.Designer.cs">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InsulinPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +124,7 @@
     <Compile Include="Forms\UsersListForm.Designer.cs">
       <DependentUpon>UsersListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Categorie.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -123,6 +137,12 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CalculateForm.resx">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsulinPlanForm.resx">
       <DependentUpon>InsulinPlanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +165,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NutritionCalculator.Controllers.CategoriesController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
