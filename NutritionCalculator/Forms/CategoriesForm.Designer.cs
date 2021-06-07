@@ -31,18 +31,19 @@ namespace NutritionCalculator.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btSave = new System.Windows.Forms.Button();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvCategories = new System.Windows.Forms.DataGridView();
             this.categoriesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource2)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,6 @@ namespace NutritionCalculator.Forms
             // 
             this.categoriesBindingSource.DataMember = "Categories";
             this.categoriesBindingSource.DataSource = this.categoriesControllerBindingSource;
-            // 
-            // categoriesControllerBindingSource
-            // 
-            this.categoriesControllerBindingSource.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
             // 
             // btSave
             // 
@@ -75,6 +72,8 @@ namespace NutritionCalculator.Forms
             // dgvCategories
             // 
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name});
             this.dgvCategories.Location = new System.Drawing.Point(12, 59);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.Size = new System.Drawing.Size(312, 386);
@@ -86,6 +85,10 @@ namespace NutritionCalculator.Forms
             this.categoriesBindingSource2.DataMember = "Categories";
             this.categoriesBindingSource2.DataSource = this.categoriesControllerBindingSource;
             // 
+            // categoriesControllerBindingSource
+            // 
+            this.categoriesControllerBindingSource.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
+            // 
             // categoriesControllerBindingSource1
             // 
             this.categoriesControllerBindingSource1.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
@@ -93,6 +96,12 @@ namespace NutritionCalculator.Forms
             // categoriesControllerBindingSource2
             // 
             this.categoriesControllerBindingSource2.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            this.Name.Width = 270;
             // 
             // CategoriesForm
             // 
@@ -107,10 +116,10 @@ namespace NutritionCalculator.Forms
             this.Text = "CategoriesForm";
             this.Load += new System.EventHandler(this.CategoriesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource2)).EndInit();
             this.ResumeLayout(false);
@@ -126,5 +135,6 @@ namespace NutritionCalculator.Forms
         private System.Windows.Forms.BindingSource categoriesBindingSource2;
         private System.Windows.Forms.BindingSource categoriesControllerBindingSource1;
         private System.Windows.Forms.BindingSource categoriesControllerBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
     }
 }
