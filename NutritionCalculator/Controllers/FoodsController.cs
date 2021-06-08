@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace NutritionCalculator.Controllers
 {
-    public class FoodController : DataController
+    public class FoodsController : DataController
     {
         public List<Food> Foods { get; }
-        
-        public FoodController()
+        public Food CurrentFood { get; set; }
+        public FoodsController()
         {
             Foods = GetFoodsData();
         }

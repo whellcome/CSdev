@@ -30,28 +30,23 @@ namespace NutritionCalculator.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btSave = new System.Windows.Forms.Button();
-            this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriesControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesControllerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.categoriesControllerBindingSource;
             // 
             // btSave
             // 
@@ -64,11 +59,6 @@ namespace NutritionCalculator.Forms
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
-            // categoriesBindingSource1
-            // 
-            this.categoriesBindingSource1.DataMember = "Categories";
-            this.categoriesBindingSource1.DataSource = this.categoriesControllerBindingSource;
-            // 
             // dgvCategories
             // 
             this.dgvCategories.AutoGenerateColumns = false;
@@ -80,12 +70,30 @@ namespace NutritionCalculator.Forms
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.Size = new System.Drawing.Size(312, 386);
             this.dgvCategories.TabIndex = 2;
+            this.dgvCategories.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellDoubleClick);
             this.dgvCategories.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellValueChanged);
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.categoriesControllerBindingSource;
+            // 
+            // categoriesBindingSource1
+            // 
+            this.categoriesBindingSource1.DataMember = "Categories";
+            this.categoriesBindingSource1.DataSource = this.categoriesControllerBindingSource;
             // 
             // categoriesBindingSource2
             // 
             this.categoriesBindingSource2.DataMember = "Categories";
             this.categoriesBindingSource2.DataSource = this.categoriesControllerBindingSource;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 270;
             // 
             // categoriesControllerBindingSource
             // 
@@ -99,13 +107,6 @@ namespace NutritionCalculator.Forms
             // 
             this.categoriesControllerBindingSource2.DataSource = typeof(NutritionCalculator.Controllers.CategoriesController);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 270;
-            // 
             // CategoriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -118,9 +119,9 @@ namespace NutritionCalculator.Forms
             this.Name = "CategoriesForm";
             this.Text = "CategoriesForm";
             this.Load += new System.EventHandler(this.CategoriesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesControllerBindingSource1)).EndInit();

@@ -64,7 +64,7 @@ namespace NutritionCalculator.Controllers
         {
             NCData.CurrentUser.InsulinPlan = CurrentInsulinPlan.Id;
             Save(InsulinPlans);
-            NCData.EventHandler(typeof(InsulinPlan).Name);
+            NCData.DataSaved(this, new NCEventArgs("InsulinPlan"));
         }
 
         public static double GetInsulinDose(double amountCarbohydrates, double glucoseLevel = 0)

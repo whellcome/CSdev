@@ -57,5 +57,11 @@ namespace NutritionCalculator.Forms
             CategoriesForm categoriesForm = new CategoriesForm();
             categoriesForm.Show();
         }
+
+        private void btFoods_Click(object sender, EventArgs e)
+        {
+            FoodForm foodForm = new FoodForm();
+            foodForm.Show();
+        }
     }
 }

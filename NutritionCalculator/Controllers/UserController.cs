@@ -22,12 +22,12 @@ namespace NutritionCalculator.Controllers
         {
             Users = GetUsersData();
             CurrentUser = NCData.CurrentUser ?? Users.FirstOrDefault();
-            NCData.EventHandler = new NCData.DataSaved(eventDataSaved);
+            NCData.DataSaved = new NCData.EventHandler<DataController,NCEventArgs>(eventDataSaved);
         }
 
-        private void eventDataSaved(string data)
+        private void eventDataSaved(DataController controller, NCEventArgs args)
         {
-            if (data.Contains(typeof(InsulinPlan).Name))
+            if (args.Message.Equals("InsulinPlan"))
             {
                 Save();
             }

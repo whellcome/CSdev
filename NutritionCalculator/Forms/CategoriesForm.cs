@@ -14,14 +14,21 @@ namespace NutritionCalculator.Forms
     public partial class CategoriesForm : Form
     {
         private CategoriesController CategoriesController = new CategoriesController();
-        public CategoriesForm()
+        private bool Editable;
+        public CategoriesForm(bool editable = true)
         {
             InitializeComponent();
+            Editable = editable;
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
-            CategoriesController.Categories.Add(CategoriesController.SetNewItem());
+            if(Editable) CategoriesController.Categories.Add(CategoriesController.SetNewItem());
+            else
+            {
+                dgvCategories.ReadOnly = true;
+                btSave.Enabled = false;
+            }
             dgvCategories.DataSource = CategoriesController.Categories;
 
         }
@@ -45,6 +52,12 @@ namespace NutritionCalculator.Forms
         {
             dgvCategories.DataSource = null;
             dgvCategories.DataSource = CategoriesController.Categories;
+        }
+
+        private void dgvCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            NCData.DataSelected(this, new NCEventArgs(dgvCategories.CurrentRow.Index.ToString()));
+            Close();
         }
     }
 }

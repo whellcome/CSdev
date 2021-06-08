@@ -31,6 +31,7 @@ namespace NutritionCalculator.Forms
         {
             this.buttonSelectUser = new System.Windows.Forms.Button();
             this.btCategories = new System.Windows.Forms.Button();
+            this.btFoods = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSelectUser
@@ -57,11 +58,24 @@ namespace NutritionCalculator.Forms
             this.btCategories.UseVisualStyleBackColor = true;
             this.btCategories.Click += new System.EventHandler(this.btCategories_Click);
             // 
+            // btFoods
+            // 
+            this.btFoods.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFoods.Location = new System.Drawing.Point(13, 97);
+            this.btFoods.Margin = new System.Windows.Forms.Padding(4);
+            this.btFoods.Name = "btFoods";
+            this.btFoods.Size = new System.Drawing.Size(290, 58);
+            this.btFoods.TabIndex = 2;
+            this.btFoods.Text = "Foods";
+            this.btFoods.UseVisualStyleBackColor = true;
+            this.btFoods.Click += new System.EventHandler(this.btFoods_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 554);
+            this.Controls.Add(this.btFoods);
             this.Controls.Add(this.btCategories);
             this.Controls.Add(this.buttonSelectUser);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -78,5 +92,6 @@ namespace NutritionCalculator.Forms
 
         private System.Windows.Forms.Button buttonSelectUser;
         private System.Windows.Forms.Button btCategories;
+        private System.Windows.Forms.Button btFoods;
     }
 }

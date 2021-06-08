@@ -10,6 +10,7 @@ namespace NutritionCalculator.Controllers
     public class CategoriesController : DataController
     {
         public List<Category> Categories { get; set; }
+        public Category CurrentCategory { get; set; }
 
         public CategoriesController()
         {
