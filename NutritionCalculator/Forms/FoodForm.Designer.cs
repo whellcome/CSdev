@@ -29,7 +29,7 @@ namespace NutritionCalculator.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtArt = new System.Windows.Forms.TextBox();
@@ -53,14 +53,14 @@ namespace NutritionCalculator.Forms
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtname
+            // txtName
             // 
-            this.txtname.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtname.Location = new System.Drawing.Point(139, 70);
-            this.txtname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(192, 25);
-            this.txtname.TabIndex = 0;
+            this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtName.Location = new System.Drawing.Point(139, 70);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(192, 25);
+            this.txtName.TabIndex = 0;
             // 
             // label1
             // 
@@ -129,6 +129,7 @@ namespace NutritionCalculator.Forms
             this.txtCarbohydrates.Name = "txtCarbohydrates";
             this.txtCarbohydrates.Size = new System.Drawing.Size(44, 25);
             this.txtCarbohydrates.TabIndex = 6;
+            this.txtCarbohydrates.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCarbohydrates_KeyPress);
             // 
             // label5
             // 
@@ -148,6 +149,7 @@ namespace NutritionCalculator.Forms
             this.txtProteins.Name = "txtProteins";
             this.txtProteins.Size = new System.Drawing.Size(44, 25);
             this.txtProteins.TabIndex = 8;
+            this.txtProteins.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProteins_KeyPress);
             // 
             // label6
             // 
@@ -167,6 +169,7 @@ namespace NutritionCalculator.Forms
             this.txtFats.Name = "txtFats";
             this.txtFats.Size = new System.Drawing.Size(44, 25);
             this.txtFats.TabIndex = 10;
+            this.txtFats.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFats_KeyPress);
             // 
             // label7
             // 
@@ -186,6 +189,7 @@ namespace NutritionCalculator.Forms
             this.txtCalories.Name = "txtCalories";
             this.txtCalories.Size = new System.Drawing.Size(44, 25);
             this.txtCalories.TabIndex = 12;
+            this.txtCalories.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalories_KeyPress);
             // 
             // label8
             // 
@@ -205,6 +209,7 @@ namespace NutritionCalculator.Forms
             this.txtGlycemicIndex.Name = "txtGlycemicIndex";
             this.txtGlycemicIndex.Size = new System.Drawing.Size(44, 25);
             this.txtGlycemicIndex.TabIndex = 14;
+            this.txtGlycemicIndex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGlycemicIndex_KeyPress);
             // 
             // groupBox1
             // 
@@ -262,6 +267,7 @@ namespace NutritionCalculator.Forms
             this.btSave.TabIndex = 20;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // FoodForm
             // 
@@ -278,7 +284,7 @@ namespace NutritionCalculator.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtArt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtname);
+            this.Controls.Add(this.txtName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FoodForm";
@@ -292,7 +298,7 @@ namespace NutritionCalculator.Forms
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtArt;

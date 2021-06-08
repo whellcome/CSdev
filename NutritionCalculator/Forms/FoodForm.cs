@@ -32,5 +32,42 @@ namespace NutritionCalculator.Forms
             categoriesController.CurrentCategory = categoriesController.Categories[index];
             lbCategory.Text = categoriesController.CurrentCategory.Name;
         }
+
+        private void txtCarbohydrates_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+            if (!Char.IsDigit(number)) e.Handled = true;
+        }
+
+        private void txtProteins_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+            if (!Char.IsDigit(number)) e.Handled = true;    
+        }
+
+        private void txtFats_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+            if (!Char.IsDigit(number)) e.Handled = true;
+        }
+
+        private void txtCalories_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+            if (!Char.IsDigit(number)) e.Handled = true;
+        }
+
+        private void txtGlycemicIndex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+            if (!Char.IsDigit(number)) e.Handled = true;
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            foodsController.SaveOrNew(categoriesController.CurrentCategory,txtName.Text,txtArt.Text,
+                                      txtDescription.Text,txtCarbohydrates.Text,txtProteins.Text,txtFats.Text,
+                                      txtCalories.Text,txtGlycemicIndex.Text);
+        }
     }
 }

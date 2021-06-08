@@ -60,8 +60,8 @@ namespace NutritionCalculator.Forms
 
         private void btFoods_Click(object sender, EventArgs e)
         {
-            FoodForm foodForm = new FoodForm();
-            foodForm.Show();
+            FoodsForm foodsForm = new FoodsForm();
+            foodsForm.Show();
         }
     }
 }

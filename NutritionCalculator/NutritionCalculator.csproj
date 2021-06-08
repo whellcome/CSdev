@@ -104,6 +104,12 @@
     <Compile Include="Forms\FoodForm.Designer.cs">
       <DependentUpon>FoodForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FoodsForm.Designer.cs">
+      <DependentUpon>FoodsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InsulinPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Forms\FoodForm.resx">
       <DependentUpon>FoodForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FoodsForm.resx">
+      <DependentUpon>FoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsulinPlanForm.resx">
       <DependentUpon>InsulinPlanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +184,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NutritionCalculator.Controllers.CategoriesController.datasource" />
+    <None Include="Properties\DataSources\NutritionCalculator.Controllers.FoodsController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
