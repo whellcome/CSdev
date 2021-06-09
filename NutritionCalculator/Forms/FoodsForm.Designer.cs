@@ -51,6 +51,7 @@ namespace NutritionCalculator.Forms
             this.lvFoods.TabIndex = 0;
             this.lvFoods.UseCompatibleStateImageBehavior = false;
             this.lvFoods.View = System.Windows.Forms.View.Details;
+            this.lvFoods.DoubleClick += new System.EventHandler(this.lvFoods_DoubleClick);
             // 
             // category
             // 

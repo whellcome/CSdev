@@ -38,10 +38,12 @@ namespace NutritionCalculator.Forms
             {
                 buttonSelectUser.Text = $"User: {NCData.CurrentUser.Name} \n" +
                                         $"Change user";
+                btMeal.Enabled = true;
             }
             else
             {
                 buttonSelectUser.Text = "Select a user";
+                btMeal.Enabled = false;
             }
             this.Refresh();
         }
@@ -62,6 +64,12 @@ namespace NutritionCalculator.Forms
         {
             FoodsForm foodsForm = new FoodsForm();
             foodsForm.Show();
+        }
+
+        private void btMeal_Click(object sender, EventArgs e)
+        {
+            MealForm mealForm = new MealForm();
+            mealForm.Show();
         }
     }
 }

@@ -73,5 +73,11 @@ namespace NutritionCalculator.Forms
             foodForm.Show();
             Close();
         }
+
+        private void lvFoods_DoubleClick(object sender, EventArgs e)
+        {
+            var food = (Food)lvFoods.SelectedItems[0].Tag;
+            NCData.DataSelected(this, new NCEventArgs(food.Id.ToString()));
+        }
     }
 }

@@ -40,17 +40,20 @@ namespace NutritionCalculator.Forms
         private void fillForm(uint index)
         {
             var food = foodsController.Foods.SingleOrDefault(f => f.Id == index);
-            foodsController.CurrentFood = food;
-            categoriesController.CurrentCategory = food.Categorie;
-            lbCategory.Text = categoriesController.CurrentCategory.Name;
-            txtName.Text = food.Name;
-            txtArt.Text = food.Kind;
-            txtDescription.Text = food.Description;
-            txtCarbohydrates.Text = food.Carbohydrates.ToString();
-            txtProteins.Text = food.Proteins.ToString();
-            txtFats.Text = food.Fats.ToString();
-            txtCalories.Text = food.Calories.ToString();
-            txtGlycemicIndex.Text = food.GlycemicIndex.ToString();
+            if (food != null)
+            {
+                foodsController.CurrentFood = food;
+                categoriesController.CurrentCategory = food.Categorie;
+                lbCategory.Text = categoriesController.CurrentCategory.Name;
+                txtName.Text = food.Name;
+                txtArt.Text = food.Kind;
+                txtDescription.Text = food.Description;
+                txtCarbohydrates.Text = food.Carbohydrates.ToString();
+                txtProteins.Text = food.Proteins.ToString();
+                txtFats.Text = food.Fats.ToString();
+                txtCalories.Text = food.Calories.ToString();
+                txtGlycemicIndex.Text = food.GlycemicIndex.ToString();
+            }
         }
 
         private void txtCarbohydrates_KeyPress(object sender, KeyPressEventArgs e)
