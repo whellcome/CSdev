@@ -1,13 +1,6 @@
 ﻿using NutritionCalculator.Controllers;
 using NutritionCalculator.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutritionCalculator.Forms
@@ -42,8 +35,12 @@ namespace NutritionCalculator.Forms
 
         private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
-            FoodForm foodForm = new FoodForm();
+            FoodForm foodForm = new FoodForm(true);
+            var food = (Food)lvFoods.SelectedItems[0].Tag;
+            NCData.DataSelected(this, new NCEventArgs(food.Id.ToString()));
             foodForm.Show();
+            //foodsController.Save(); // TODO: in case of deletion from the list
+            Close();
         }
 
         private void GroupListView(ListView lstView, int SubItemIndex)
@@ -68,6 +65,13 @@ namespace NutritionCalculator.Forms
                 }
                 flag = true;
             }
+        }
+
+        private void btCreate_Click(object sender, EventArgs e)
+        {
+            FoodForm foodForm = new FoodForm();
+            foodForm.Show();
+            Close();
         }
     }
 }

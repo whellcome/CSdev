@@ -1,24 +1,20 @@
 ﻿using NutritionCalculator.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutritionCalculator.Forms
 {
     public partial class FoodForm : Form
     {
+        private bool editMode { get; }
         private FoodsController foodsController = new FoodsController();
         private CategoriesController categoriesController = new CategoriesController();
-        public FoodForm()
+        public FoodForm(bool editMode = false)
         {
             InitializeComponent();
             NCData.DataSelected = new NCData.EventHandler<Form, NCEventArgs>(eventDataSelected);
+            this.editMode = editMode;
         }
 
         private void btSelectCategory_Click(object sender, EventArgs e)
@@ -28,9 +24,33 @@ namespace NutritionCalculator.Forms
         }
         private void eventDataSelected(Form sender, NCEventArgs args)
         {
-            int index = Int32.Parse(args.Message);
-            categoriesController.CurrentCategory = categoriesController.Categories[index];
+            if (sender.GetType() == typeof(FoodsForm))
+            {
+                uint index = uint.Parse(args.Message);
+                fillForm(index);
+            }
+            else
+            {
+                int index = int.Parse(args.Message);
+                categoriesController.CurrentCategory = categoriesController.Categories[index];
+                lbCategory.Text = categoriesController.CurrentCategory.Name;
+            }
+        }
+
+        private void fillForm(uint index)
+        {
+            var food = foodsController.Foods.SingleOrDefault(f => f.Id == index);
+            foodsController.CurrentFood = food;
+            categoriesController.CurrentCategory = food.Categorie;
             lbCategory.Text = categoriesController.CurrentCategory.Name;
+            txtName.Text = food.Name;
+            txtArt.Text = food.Kind;
+            txtDescription.Text = food.Description;
+            txtCarbohydrates.Text = food.Carbohydrates.ToString();
+            txtProteins.Text = food.Proteins.ToString();
+            txtFats.Text = food.Fats.ToString();
+            txtCalories.Text = food.Calories.ToString();
+            txtGlycemicIndex.Text = food.GlycemicIndex.ToString();
         }
 
         private void txtCarbohydrates_KeyPress(object sender, KeyPressEventArgs e)
@@ -65,9 +85,13 @@ namespace NutritionCalculator.Forms
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            foodsController.SaveOrNew(categoriesController.CurrentCategory,txtName.Text,txtArt.Text,
-                                      txtDescription.Text,txtCarbohydrates.Text,txtProteins.Text,txtFats.Text,
-                                      txtCalories.Text,txtGlycemicIndex.Text);
+            var id = (editMode) ? foodsController.CurrentFood.Id.ToString() : "0";
+            foodsController.SaveOrNew(id, categoriesController.CurrentCategory, txtName.Text, txtArt.Text,
+                                      txtDescription.Text, txtCarbohydrates.Text, txtProteins.Text, txtFats.Text,
+                                      txtCalories.Text, txtGlycemicIndex.Text);
+            FoodsForm foodsForm = new FoodsForm();
+            foodsForm.Show();
+            Close();
         }
     }
 }

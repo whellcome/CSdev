@@ -41,7 +41,7 @@ namespace NutritionCalculator.Controllers
                     CurrentInsulinPlan.Plan.Add(item);
                 }   
             }
-            CurrentInsulinPlan.Id = (int)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
+            CurrentInsulinPlan.Id = (uint)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
             InsulinPlans.Add(CurrentInsulinPlan);
             Save();
         }

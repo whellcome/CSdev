@@ -82,6 +82,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DataJsonController.cs" />
+    <Compile Include="Controllers\DishesController.cs" />
     <Compile Include="Controllers\FoodsController.cs" />
     <Compile Include="Controllers\IDataController.cs" />
     <Compile Include="Controllers\InsulinPlanController.cs" />

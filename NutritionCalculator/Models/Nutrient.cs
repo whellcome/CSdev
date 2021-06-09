@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NutritionCalculator.Models
+﻿namespace NutritionCalculator.Models
 {
     public abstract class Nutrient
     {
+        public uint Id { get; set; }
         public string Name { get; set; }
         public Category Categorie { get; set; }
         public string Description { get; set; }

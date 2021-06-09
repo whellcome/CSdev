@@ -5,7 +5,7 @@ namespace NutritionCalculator.Models
     
     public class InsulinPlan
     {
-        public int Id { get; set; }
+        public uint Id { get; set; }
         
         public User User { get; set; }
         

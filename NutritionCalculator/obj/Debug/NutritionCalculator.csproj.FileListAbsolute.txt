@@ -36,3 +36,4 @@ D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.
 D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.CategoriesForm.resources
 D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.FoodForm.resources
 D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.Forms.FoodsForm.resources
+D:\0\projects\VSC\CSdev\NutritionCalculator\obj\Debug\NutritionCalculator.csproj.AssemblyReference.cache
