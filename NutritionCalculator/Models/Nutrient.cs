@@ -15,6 +15,14 @@
         {
             return Carbohydrates * amount / 100;
         }
+        public double GetProteins(double amount)
+        {
+            return Proteins * amount / 100;
+        }
+        public double GetFats(double amount)
+        {
+            return Fats * amount / 100;
+        }
         public double GetCalories(double amount)
         {
             return Calories * amount / 100;

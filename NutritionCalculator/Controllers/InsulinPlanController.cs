@@ -67,11 +67,11 @@ namespace NutritionCalculator.Controllers
             NCData.DataSaved(this, new NCEventArgs("InsulinPlan"));
         }
 
-        public static double GetInsulinDose(double amountCarbohydrates, double glucoseLevel = 0)
+        public static double GetInsulinDose(DateTime dateTime, double amountCarbohydrates, double glucoseLevel = 0)
         {
             if (NCData.CurrentUser == null) return 0;
-            var localTime = new LocalDateTime().TimeOfDay;
-            localTime = LocalDateTime.FromDateTime(DateTime.Now).TimeOfDay;
+            
+            var localTime = LocalDateTime.FromDateTime(dateTime).TimeOfDay;
             double eatFactor = 0, targetFactor = 0, glucoseTarget = 0;
             var insulinController = new InsulinPlanController();
             var plan = insulinController.CurrentInsulinPlan.Plan;
@@ -90,7 +90,7 @@ namespace NutritionCalculator.Controllers
                 targetFactor = NCData.CurrentUser.UnitSystemMgdL ? item.TargetFactor/100 : item.TargetFactor;
                 glucoseTarget = item.GlucoseLevelTarget;
             }
-            var resultat = amountCarbohydrates * eatFactor / 100 + (glucoseLevel - glucoseTarget) * targetFactor;
+            var resultat = amountCarbohydrates * eatFactor / 10 + ((glucoseLevel > 0) ? (glucoseLevel - glucoseTarget) * targetFactor : 0);
             return resultat;
         }
     }

@@ -20,7 +20,11 @@ namespace NutritionCalculator.Forms
             InitializeComponent();
             NCData.DataSelected = new NCData.EventHandler<Form, NCEventArgs>(eventDataSelected);
         }
-
+        private void MealForm_Load(object sender, EventArgs e)
+        {
+            lbUser.Text = "User: " + mealsController.CurrentUser.Name;
+            MealItemsRefresh();
+        }
         private void eventDataSelected(Form sender, NCEventArgs e)
         {
             if (sender.GetType() == typeof(FoodsForm))
@@ -61,14 +65,16 @@ namespace NutritionCalculator.Forms
             }
         }
 
-        private void MealForm_Load(object sender, EventArgs e)
-        {
-            MealItemsRefresh();
-        }
         private void MealItemsRefresh()
         {
             dgvMealItems.DataSource = null;
             dgvMealItems.DataSource = mealsController.CurrentMeal.MealItems;
+        }
+
+        private void dgvMealItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            lbConsist.Text = mealsController.getEnergyValues();
+            lbConsist.Text += "\n\nRecommended insulin dose: " + InsulinPlanController.GetInsulinDose(dtpMealDateTime.Value, mealsController.GetCarbohydrates());
         }
     }
 }

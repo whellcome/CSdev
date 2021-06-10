@@ -18,7 +18,7 @@ namespace NutritionCalculator.Controllers
             Meals = GetMealsData();
             CurrentMeal = new Meal
             {
-                MealItems = new List<MealItem>
+                MealItems = new List<Ingredient>
                 {
                     SetNewItem()
                 }
@@ -30,13 +30,13 @@ namespace NutritionCalculator.Controllers
             CurrentMeal.Id = (uint)DateTime.Now.Subtract(new DateTime(2021, 1, 1)).TotalSeconds;
         }
 
-        public MealItem SetNewItem(Nutrient nutrient, double amount)
+        public Ingredient SetNewItem(Nutrient nutrient, double amount)
         {
-            return new MealItem(nutrient, amount);
+            return new Ingredient(nutrient, amount);
         }
-        public MealItem SetNewItem()
+        public Ingredient SetNewItem()
         {
-            return new MealItem();
+            return new Ingredient();
         }
         public double GetCarbohydrates()
         {
@@ -45,12 +45,33 @@ namespace NutritionCalculator.Controllers
                 result += item.Nutrient.GetCarbohydrates(item.Amount);
             return result;
         }
+        public double GetProteins()
+        {
+            double result = 0;
+            foreach (var item in CurrentMeal.MealItems)
+                result += item.Nutrient.GetProteins(item.Amount);
+            return result;
+        }
+        public double GetFats()
+        {
+            double result = 0;
+            foreach (var item in CurrentMeal.MealItems)
+                result += item.Nutrient.GetFats(item.Amount);
+            return result;
+        }
         public double GetCalories()
         {
             double result = 0;
             foreach (var item in CurrentMeal.MealItems)
                 result += item.Nutrient.GetCalories(item.Amount);
             return result;
+        }
+        public string getEnergyValues()
+        {
+            return $"Carbohydrates: {GetCarbohydrates()} \n" +
+                   $"Proteins: {GetProteins()}\n" +
+                   $"Fats: {GetFats()}\n" +
+                   $"Calories: {GetCalories()}";
         }
         private List<Meal> GetMealsData()
         {

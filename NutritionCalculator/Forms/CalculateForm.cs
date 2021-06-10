@@ -20,7 +20,7 @@ namespace NutritionCalculator.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = InsulinPlanController.GetInsulinDose(Double.Parse(textBox1.Text), Double.Parse(textBox2.Text)).ToString();
+            label1.Text = InsulinPlanController.GetInsulinDose(DateTime.Now, Double.Parse(textBox1.Text), Double.Parse(textBox2.Text)).ToString();
         }
     }
 }
